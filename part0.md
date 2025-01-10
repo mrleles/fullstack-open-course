@@ -41,7 +41,6 @@
     participant browser
     participant server
     
-    browser to perform a new HTTP GET request
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/spa
     activate server
     server-->>browser: HTML document
