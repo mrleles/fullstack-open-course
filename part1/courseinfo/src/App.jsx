@@ -1,5 +1,4 @@
 const Header = (props) => {
-  console.log(props)
   return (
     <h1>{props.course}</h1>
   )
@@ -14,18 +13,25 @@ const Part = (props) => {
 }
 
 const Content = (parts) => {
+  const part1 = parts['parts'][0]
+  const part2 = parts['parts'][1]
+  const part3 = parts['parts'][2]
   return (
     <div>
-      <Part part={parts[0].name} exercises={parts[0].exercises} />
-      <Part part={parts[1].name} exercises={parts[1].exercises} />
-      <Part part={parts[2].name} exercises={parts[2].exercises} />
+      <Part part={part1['name']} exercises={part1['exercises']} />
+      <Part part={part2['name']} exercises={part2['exercises']} />
+      <Part part={part3['name']} exercises={part3['exercises']} />
+
     </div>
   )
 }
 
 const Total = (parts) => {
+  const part1 = parts['parts'][0]['exercises']
+  const part2 = parts['parts'][1]['exercises']
+  const part3 = parts['parts'][2]['exercises']
   return (
-    <p>Number of exercises {parts[0].exercises + parts[1].exercises + parts[2].exercises}</p>
+    <p>Number of exercises {part1 + part2 + part3}</p>
   )
 }
 
